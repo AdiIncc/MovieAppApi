@@ -80,6 +80,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedMovie = movies[indexPath.row]
+        searchController.searchBar.resignFirstResponder()
         presentMoviePopup(movieDetailsView: movieDetailsView) {
             movieDetailsView.delegate = self
             movieDetailsView.configure(with: selectedMovie)
@@ -119,7 +120,6 @@ extension SearchViewController: UISearchResultsUpdating {
         guard let searchText = searchController.searchBar.text else {
             return
         }
-        
         searchTask = Task {
             do {
                 try await Task.sleep(for: .seconds(0.5))
@@ -131,7 +131,7 @@ extension SearchViewController: UISearchResultsUpdating {
                 print(error.localizedDescription)
             }
         }
-        if searchText.isEmpty {
+        if !isFiltering {
             movies = []
             photoCollectionView.reloadData()
         }
