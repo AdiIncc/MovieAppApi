@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
 
     private let numberOfItemsPerRow: CGFloat = 2
     private let horizontalSpacing: CGFloat = 10.0

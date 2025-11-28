@@ -11,7 +11,7 @@ protocol MovieDetailsViewDelegate: AnyObject {
     func didTapExitButton()
 }
 
-class MovieDetailsView: UIView {
+final class MovieDetailsView: UIView {
     
     private lazy var mainView = UIView()
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController {
     
     private lazy var themeSegment: UISegmentedControl = {
         let sc = UISegmentedControl(items: [
