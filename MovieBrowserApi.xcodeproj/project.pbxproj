@@ -6,7 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		98FEB081FA9F1D710CA4542D /* Pods_MovieBrowserApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9C251B278A3F53BB042F3D /* Pods_MovieBrowserApi.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		1AC5E4D19BB02D936B035FAB /* Pods-MovieBrowserApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBrowserApi.release.xcconfig"; path = "Target Support Files/Pods-MovieBrowserApi/Pods-MovieBrowserApi.release.xcconfig"; sourceTree = "<group>"; };
+		9B9C251B278A3F53BB042F3D /* Pods_MovieBrowserApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieBrowserApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7999CF4C89A5C424B78F999 /* Pods-MovieBrowserApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBrowserApi.debug.xcconfig"; path = "Target Support Files/Pods-MovieBrowserApi/Pods-MovieBrowserApi.debug.xcconfig"; sourceTree = "<group>"; };
 		CF4F91492ECCB4AF00D18811 /* MovieBrowserApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBrowserApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -36,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98FEB081FA9F1D710CA4542D /* Pods_MovieBrowserApi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13D0A2174AAA695F230D3C1F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7999CF4C89A5C424B78F999 /* Pods-MovieBrowserApi.debug.xcconfig */,
+				1AC5E4D19BB02D936B035FAB /* Pods-MovieBrowserApi.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		240E0F48BF973BDA8EE2B62F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B9C251B278A3F53BB042F3D /* Pods_MovieBrowserApi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CF4F91402ECCB4AF00D18811 = {
 			isa = PBXGroup;
 			children = (
 				CF4F914B2ECCB4AF00D18811 /* MovieBrowserApi */,
 				CF4F914A2ECCB4AF00D18811 /* Products */,
+				13D0A2174AAA695F230D3C1F /* Pods */,
+				240E0F48BF973BDA8EE2B62F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,9 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF4F915C2ECCB4B000D18811 /* Build configuration list for PBXNativeTarget "MovieBrowserApi" */;
 			buildPhases = (
+				246E922B3AE640D22EC6C444 /* [CP] Check Pods Manifest.lock */,
 				CF4F91452ECCB4AF00D18811 /* Sources */,
 				CF4F91462ECCB4AF00D18811 /* Frameworks */,
 				CF4F91472ECCB4AF00D18811 /* Resources */,
+				53F05A7D2CF3CC5CA3BDB5E7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +106,6 @@
 				CF4F914B2ECCB4AF00D18811 /* MovieBrowserApi */,
 			);
 			name = MovieBrowserApi;
-			packageProductDependencies = (
-			);
 			productName = MovieBrowserApi;
 			productReference = CF4F91492ECCB4AF00D18811 /* MovieBrowserApi.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +154,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		246E922B3AE640D22EC6C444 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MovieBrowserApi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53F05A7D2CF3CC5CA3BDB5E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieBrowserApi/Pods-MovieBrowserApi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieBrowserApi/Pods-MovieBrowserApi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MovieBrowserApi/Pods-MovieBrowserApi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF4F91452ECCB4AF00D18811 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,12 +213,14 @@
 /* Begin XCBuildConfiguration section */
 		CF4F915D2ECCB4B000D18811 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7999CF4C89A5C424B78F999 /* Pods-MovieBrowserApi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4N3JB99JHH;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieBrowserApi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -167,12 +242,14 @@
 		};
 		CF4F915E2ECCB4B000D18811 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AC5E4D19BB02D936B035FAB /* Pods-MovieBrowserApi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4N3JB99JHH;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieBrowserApi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

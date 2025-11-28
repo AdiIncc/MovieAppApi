@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class PhotoCollectionViewCell: UICollectionViewCell {
     
@@ -22,8 +23,6 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    var currentImageURL: String?
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(cellBackgroundView)
@@ -39,7 +38,6 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         posterImageView.image = nil
-        currentImageURL = nil
     }
     
     
@@ -78,16 +76,15 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
     
     func configure(with movies: MovieListItem) {
         movieTitle.text = movies.title
-        self.currentImageURL = movies.posterURL
-        Task {
-            do {
-                let image = try await ImageCacheManager.shared.downloadImage(from: movies.posterURL)
-                if self.currentImageURL == movies.posterURL {
-                    posterImageView.image = image
-                }
-            }
-            catch {
-                posterImageView.image = UIImage(systemName: "photo.fill")
+        guard let url = URL(string: movies.posterURL) else {
+            posterImageView.image = UIImage(systemName: "photo.fill")
+            return
+        }
+        posterImageView.sd_setImage(with: url, placeholderImage: UIImage(systemName: "photo.fill")?.withTintColor(.secondarySystemBackground, renderingMode: .alwaysOriginal), options: [.highPriority, .scaleDownLargeImages]) { [weak self] image, error, cacheType, url in
+            guard let self = self else { return }
+            if let error = error {
+                print(error.localizedDescription)
+                self.posterImageView.image = UIImage(systemName: "xmark.octagon.fill")
             }
         }
     }

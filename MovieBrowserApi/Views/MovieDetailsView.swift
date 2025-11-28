@@ -163,7 +163,6 @@ class MovieDetailsView: UIView {
                     posterImageView.image = image
                     mainView.layoutIfNeeded()
                 }
-               
             }
             catch {
                 posterImageView.image = UIImage(systemName: "person")
