@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 protocol MovieDetailsViewDelegate: AnyObject {
     func didTapExitButton()
@@ -156,17 +157,11 @@ final class MovieDetailsView: UIView {
         yearLabel.text = String(movie.year)
         ratingLabel.text = "\(movie.rank)"
         
-        Task {
-            do {
-                let image = try await ImageCacheManager.shared.downloadImage(from: movie.posterURL)
-                await MainActor.run {
-                    posterImageView.image = image
-                    mainView.layoutIfNeeded()
-                }
-            }
-            catch {
-                posterImageView.image = UIImage(systemName: "person")
-            }
+        if let url = URL(string: movie.posterURL) {
+            posterImageView.sd_setImage(with: url)
+            posterImageView.sd_imageTransition = .fade(duration: 0.35)
+        } else {
+            posterImageView.image = UIImage(systemName: "photo")
         }
     }
     

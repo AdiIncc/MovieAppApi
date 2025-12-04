@@ -87,5 +87,6 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
                 self.posterImageView.image = UIImage(systemName: "xmark.octagon.fill")
             }
         }
+        posterImageView.sd_imageTransition = .fade(duration: 0.35)
     }
 }
