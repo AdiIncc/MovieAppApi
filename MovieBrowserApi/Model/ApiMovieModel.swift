@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieResponse: Codable {
+struct MovieResponse: Codable, Equatable {
     let ok: Bool
     let errorCode: Int
     let description: [MovieListItem]
@@ -18,7 +18,7 @@ struct MovieResponse: Codable {
     }
 }
 
-struct MovieListItem: Codable {
+struct MovieListItem: Codable, Equatable {
     let title: String
     let imdbID: String
     let year: Int

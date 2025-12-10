@@ -47,7 +47,12 @@ enum NetworkError: Error {
         guard (200...299).contains(httpResponse.statusCode) else {
             throw NetworkError.invalidResponse(statusCode: httpResponse.statusCode)
         }
-        let movieData = try JSONDecoder().decode(MovieResponse.self, from: data)
-        return movieData
+        do {
+            let movieData = try JSONDecoder().decode(MovieResponse.self, from: data)
+            return movieData
+        }
+        catch {
+            throw NetworkError.decodingError
+        }
     }
 }

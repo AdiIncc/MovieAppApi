@@ -10,11 +10,22 @@
 		98FEB081FA9F1D710CA4542D /* Pods_MovieBrowserApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9C251B278A3F53BB042F3D /* Pods_MovieBrowserApi.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CFFED6BE2EE9CE0800E40BF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF4F91412ECCB4AF00D18811 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF4F91482ECCB4AF00D18811;
+			remoteInfo = MovieBrowserApi;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1AC5E4D19BB02D936B035FAB /* Pods-MovieBrowserApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBrowserApi.release.xcconfig"; path = "Target Support Files/Pods-MovieBrowserApi/Pods-MovieBrowserApi.release.xcconfig"; sourceTree = "<group>"; };
 		9B9C251B278A3F53BB042F3D /* Pods_MovieBrowserApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieBrowserApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7999CF4C89A5C424B78F999 /* Pods-MovieBrowserApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBrowserApi.debug.xcconfig"; path = "Target Support Files/Pods-MovieBrowserApi/Pods-MovieBrowserApi.debug.xcconfig"; sourceTree = "<group>"; };
 		CF4F91492ECCB4AF00D18811 /* MovieBrowserApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBrowserApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFED6BA2EE9CE0800E40BF7 /* MovieBrowserApiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieBrowserApiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +47,11 @@
 			path = MovieBrowserApi;
 			sourceTree = "<group>";
 		};
+		CFFED6BB2EE9CE0800E40BF7 /* MovieBrowserApiTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MovieBrowserApiTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +60,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				98FEB081FA9F1D710CA4542D /* Pods_MovieBrowserApi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFFED6B72EE9CE0800E40BF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				CF4F914B2ECCB4AF00D18811 /* MovieBrowserApi */,
+				CFFED6BB2EE9CE0800E40BF7 /* MovieBrowserApiTests */,
 				CF4F914A2ECCB4AF00D18811 /* Products */,
 				13D0A2174AAA695F230D3C1F /* Pods */,
 				240E0F48BF973BDA8EE2B62F /* Frameworks */,
@@ -81,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				CF4F91492ECCB4AF00D18811 /* MovieBrowserApi.app */,
+				CFFED6BA2EE9CE0800E40BF7 /* MovieBrowserApiTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +135,29 @@
 			productReference = CF4F91492ECCB4AF00D18811 /* MovieBrowserApi.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CFFED6B92EE9CE0800E40BF7 /* MovieBrowserApiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFFED6C22EE9CE0800E40BF7 /* Build configuration list for PBXNativeTarget "MovieBrowserApiTests" */;
+			buildPhases = (
+				CFFED6B62EE9CE0800E40BF7 /* Sources */,
+				CFFED6B72EE9CE0800E40BF7 /* Frameworks */,
+				CFFED6B82EE9CE0800E40BF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFFED6BF2EE9CE0800E40BF7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CFFED6BB2EE9CE0800E40BF7 /* MovieBrowserApiTests */,
+			);
+			name = MovieBrowserApiTests;
+			packageProductDependencies = (
+			);
+			productName = MovieBrowserApiTests;
+			productReference = CFFED6BA2EE9CE0800E40BF7 /* MovieBrowserApiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -122,6 +170,10 @@
 				TargetAttributes = {
 					CF4F91482ECCB4AF00D18811 = {
 						CreatedOnToolsVersion = 16.4;
+					};
+					CFFED6B92EE9CE0800E40BF7 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = CF4F91482ECCB4AF00D18811;
 					};
 				};
 			};
@@ -140,12 +192,20 @@
 			projectRoot = "";
 			targets = (
 				CF4F91482ECCB4AF00D18811 /* MovieBrowserApi */,
+				CFFED6B92EE9CE0800E40BF7 /* MovieBrowserApiTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CF4F91472ECCB4AF00D18811 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFFED6B82EE9CE0800E40BF7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -208,7 +268,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CFFED6B62EE9CE0800E40BF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CFFED6BF2EE9CE0800E40BF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF4F91482ECCB4AF00D18811 /* MovieBrowserApi */;
+			targetProxy = CFFED6BE2EE9CE0800E40BF7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CF4F915D2ECCB4B000D18811 /* Debug */ = {
@@ -390,6 +465,42 @@
 			};
 			name = Release;
 		};
+		CFFED6C02EE9CE0800E40BF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4N3JB99JHH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = adiinc.MovieBrowserApiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieBrowserApi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MovieBrowserApi";
+			};
+			name = Debug;
+		};
+		CFFED6C12EE9CE0800E40BF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4N3JB99JHH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = adiinc.MovieBrowserApiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieBrowserApi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MovieBrowserApi";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -407,6 +518,15 @@
 			buildConfigurations = (
 				CF4F915D2ECCB4B000D18811 /* Debug */,
 				CF4F915E2ECCB4B000D18811 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFFED6C22EE9CE0800E40BF7 /* Build configuration list for PBXNativeTarget "MovieBrowserApiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFFED6C02EE9CE0800E40BF7 /* Debug */,
+				CFFED6C12EE9CE0800E40BF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
