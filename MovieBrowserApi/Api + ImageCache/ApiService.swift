@@ -20,6 +20,12 @@ enum NetworkError: Error {
 
  final class ApiService {
     static let shared = ApiService()
+     
+     private let urlSession: URLSession
+     
+     init(urlSession: URLSession = .shared) {
+         self.urlSession = urlSession
+     }
     
     private var baseUrlComponent: URLComponents = {
         var url = URLComponents()
@@ -40,7 +46,7 @@ enum NetworkError: Error {
             throw NetworkError.invalidURL
         }
         
-        let (data, response) = try await URLSession.shared.data(from: url)
+        let (data, response) = try await urlSession.data(from: url)
         guard let httpResponse = response as? HTTPURLResponse else {
             throw NetworkError.invalidResponse(statusCode: 0)
         }
